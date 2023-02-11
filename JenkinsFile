@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '73f9b2df-9f6c-4776-b6f8-8f14424296bf', url: 'https://github.com/Pattabhi43/Configuration.git']])
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Pattabhi43', url: 'https://github.com/Pattabhi43/Configuration.git']])
             }
         }
 
