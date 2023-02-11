@@ -17,8 +17,8 @@ terraform { #This indicates the terraform declaration#
 # Configure the AWS Provider
 provider "aws" { #Provider Block initiated#
   region     = "ap-south-1"
-  access_key = "AKIAZJMM3CBGS2PKFFGD"
-  secret_key = "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"
+  access_key = "AKIAZJMM3CBG4AKT3MNE"
+  secret_key = "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"
   #  access_key = "AKIAZJMM3CBGS2PKFFGD"                           #Unique access key given to the user#
   #  secret_key = "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"       #Unique secret key given to the user#
 }
