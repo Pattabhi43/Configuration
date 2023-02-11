@@ -25,23 +25,6 @@ resource "aws_subnet" "sub-03" {
   }
 }
 
-resource "aws_cloudwatch_log_group" "group-03" {
-  name = "user-03-log"
-  tags = {
-    "Name" = "user-03"
-  }
-}
-
-resource "aws_flow_log" "log-03" {
-  vpc_id          = aws_vpc.vpc-03.id
-  log_destination = aws_cloudwatch_log_group.group-03.arn
-  traffic_type    = "ALL"
-  iam_role_arn    = "arn:aws:iam::638634889293:role/user-03-role"
-  tags = {
-    "Name" = "user-03"
-  }
-}
-
 resource "aws_security_group" "sg-03" {
   name   = "user-03-security"
   vpc_id = aws_vpc.vpc-03.id
