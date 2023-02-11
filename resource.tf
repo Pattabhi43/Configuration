@@ -20,6 +20,7 @@ resource "aws_vpc" "vpc-03" {
 resource "aws_subnet" "sub-03" {
   vpc_id     = aws_vpc.vpc-03.id
   cidr_block = "10.0.0.0/24"
+  availability_zone = "ap-south-1a"
   tags = {
     "Name" = "user-03"
   }
