@@ -36,7 +36,6 @@ resource "aws_security_group" "sg-03" {
 
 resource "aws_s3_bucket" "bucket-03" {
   force_destroy = false
-  policy_arn    = "arn:aws:iam::638634889293:policy/user-03-policy"
   tags = {
     "Name" = "user-03"
   }
