@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Pattabhi43', url: 'https://github.com/Pattabhi43/Configuration.git']])
+            }
+        }
+
+        stage('Check') {
+            steps {
+                sh 'terraform fmt'
+            }
+        }
+
+        stage('initialise') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+
+        stage('Dry run') {
+            steps {
+                sh 'terraform plan'
+            }
+        }
+
+        stage('Action') {
+            steps {
+                echo 'Perform ur action - {$action}'
+                sh 'terraform ${action} --auto-approve'
+            }
+        }
+
+        stage('Message') {
+            steps {
+                echo 'Deployment completed'
+            }
+        }
+    }
+}
